@@ -35,6 +35,4 @@ Initially, the project will focus only on a simplified version of the problem:
 * Assume the travel-time between locations is constant (ie no traffic)
 * Assume only 2 parents and 2 children, to allow manual checking of the solution
 * Cars and their drivers can be considered to be one entity
-* 
-
-    
+* Only look to solve for the afternoon rides, where children go from school to a sport, to home
