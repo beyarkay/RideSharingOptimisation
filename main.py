@@ -13,7 +13,7 @@ location_ids
     * loc 3 ...
 """
 IN_TRANSIT = "IN_TRANSIT"
-TIME_STEPS = 1000
+TIME_STEPS = 100
 locations = ["IN_TRANSIT",
              "Home A",
              "Home B",
@@ -65,21 +65,29 @@ def get_distances_matrix(verbose=False):
     return distances
 
 
-def get_schedules(verbose=False):
-    changes = [int(num) for num in (input("driver_id, location, from, until: ").split(" "))]
-    while len(changes) > 0:
+def input_schedules(verbose=False):
+    while True:
+        input_string = input("driver_name, location_id, from, until: ")
+        if len(input_string) == 0:
+            break
+        driver = input_string.split(" ")[0]
+        changes = [int(num) for num in input_string.split(" ")[1:]]
 
-        changes = [int(num) for num in (input("driver_id, location, from, until: ").split(" "))]
+        change_schedule(driver, changes[0], changes[1], changes[2])
+
+    # if verbose:
+    # TODO add verbose print-out
 
 
-def change_schedule(driver, location, start_incl, end_excl):
-    driver_schedules[driver.name][start_incl:end_excl] = \
+def change_schedule(driver_name, location, start_incl, end_excl):
+    driver_schedules[driver_name][start_incl:end_excl] = \
         [location for _ in range(end_excl - start_incl)]
 
 
-driver_A = Driver("Driver A", 1)
-driver_B = Driver("Driver B", 2)
-driver_schedules = {driver_A.name: [driver_A.home for _ in range(TIME_STEPS)],
-                    driver_B.name: [driver_B.home for _ in range(TIME_STEPS)]}
+driver_a = Driver("a", 1)
+driver_b = Driver("b", 2)
+driver_schedules = {driver_a.name: [driver_a.home for _ in range(TIME_STEPS)],
+                    driver_b.name: [driver_b.home for _ in range(TIME_STEPS)]}
 
-get_distances_matrix(True)
+# get_distances_matrix(True)
+input_schedules()
