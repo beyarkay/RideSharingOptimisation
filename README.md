@@ -1,8 +1,8 @@
-# RideSharingOptimisation
-Various attempt at solving a ride sharing optimisation problem.
+# Ride Sharing Optimisation
+Various attempts at solving a ride sharing optimisation problem.
 
 ## Outline
-Parents of school children want to form a ride sharing group. However it is very difficult to organise a schedule with anything more than a trivial number of parents / children
+Parents of school children want to form a ride sharing group. However it is very difficult to organise an efficient and fair schedule with anything more than a trivial number of parents / children
 
 ### Objective
 * Achieve fewer hours worth of driving per parent, preferably on as few days as possible
@@ -29,10 +29,23 @@ Initially, the project will focus only on a simplified version of the problem:
 * Many of the variables (6, 7, 8) are up to parent preference, which cannot be quantified effectively. To solve this:
     * Return multiple, similar, options to the user, for them to choose from and discuss. 
     * These options should be aesthetically good looking, as the users will likely not be used to command-line outputs. The outward appearance will affect adoption of the program
+    * However, for now just focus on the processing. Output can come later
 * Assume a schedule that repeats perfectly every 7 days (Monday to Sunday)
 * Assume every car seats 4 passengers
 * Assume every car can always carry all the baggage of the children (sports equipment, schoolbags, etc)
 * Assume the travel-time between locations is constant (ie no traffic)
 * Assume only 2 parents and 2 children, to allow manual checking of the solution
 * Cars and their drivers can be considered to be one entity
-* Only look to solve for the afternoon rides, where children go from school to a sport, to home
+* Only look to solve for the afternoon rides, where children go from school, to a sport, to home
+
+## Further Research
+Once the above problem has been solved for its search space, the search space will be expanded by eliminating each of the above simplifications, one by one.
+### Possible Expansions
+* More intuitive / user friendly interface / output
+* A schedule that repeats every N days
+    * This will be followed quickly by: a schedule that does not repeat
+* Variable car sizes
+* Variable car baggage capacities
+* Variable number of parents
+* Variable number of children
+* Schedules that covers the entire day
