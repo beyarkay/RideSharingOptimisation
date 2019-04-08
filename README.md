@@ -37,6 +37,7 @@ Initially, the project will focus only on a simplified version of the problem:
 * Assume only 2 parents and 2 children, to allow manual checking of the solution
 * Cars and their drivers can be considered to be one entity
 * Only look to solve for the afternoon rides, where children go from school, to a sport, to home
+* Use abstract time steps, not hours minutes seconds
 
 ## Further Research
 Once the above problem has been solved for its search space, the search space will be expanded by eliminating each of the above simplifications, one by one.
@@ -49,3 +50,4 @@ Once the above problem has been solved for its search space, the search space wi
 * Variable number of parents
 * Variable number of children
 * Schedules that covers the entire day
+* Use proper time, not just hours minutes seconds
