@@ -22,6 +22,7 @@ locations = ["IN_TRANSIT",
              "Hockey"]
 
 
+
 class Driver(object):
     def __init__(self, name, home):
         self.name = name
@@ -65,15 +66,17 @@ def get_distances_matrix(verbose=False):
     return distances
 
 
-def input_schedules(verbose=False):
+def get_schedules_from_user(verbose=False):
     while True:
         input_string = input("driver_name, location_id, from, until: ")
         if len(input_string) == 0:
             break
-        driver = input_string.split(" ")[0]
+        driver_name = input_string.split(" ")[0]
         changes = [int(num) for num in input_string.split(" ")[1:]]
 
-        change_schedule(driver, changes[0], changes[1], changes[2])
+        change_schedule(driver_name, changes[0], changes[1], changes[2])
+        if verbose:
+            print("{}'s new schedule:\n{}".format(driver_name, driver_schedules[driver_name]))
 
     # if verbose:
     # TODO add verbose print-out
@@ -90,4 +93,4 @@ driver_schedules = {driver_a.name: [driver_a.home for _ in range(TIME_STEPS)],
                     driver_b.name: [driver_b.home for _ in range(TIME_STEPS)]}
 
 # get_distances_matrix(True)
-input_schedules()
+get_schedules_from_user(verbose=True)

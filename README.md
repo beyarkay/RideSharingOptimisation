@@ -39,6 +39,17 @@ Initially, the project will focus only on a simplified version of the problem:
 * Only look to solve for the afternoon rides, where children go from school, to a sport, to home
 * Use abstract time steps, not hours minutes seconds
 
+## Structure of the objects to be used
+### Driver.class
+* id - a unique integer identifier
+* home - a unique integer identifier for the home location
+* schedule - a list of integers
+    * None if the driver doesn't have an assigned location at that timestep
+    * 0 if the driver has been assigned as _driving_ at that timestep
+    * a non-negative integer otherwise, the id of the location of the driver
+### Locations
+
+
 ## Further Research
 Once the above problem has been solved for its search space, the search space will be expanded by eliminating each of the above simplifications, one by one.
 ### Possible Expansions
