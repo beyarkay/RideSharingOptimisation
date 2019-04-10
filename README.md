@@ -47,8 +47,6 @@ Initially, the project will focus only on a simplified version of the problem:
     * None if the driver doesn't have an assigned location at that timestep
     * 0 if the driver has been assigned as _driving_ at that timestep
     * a non-negative integer otherwise, the id of the location of the driver
-### Locations
-
 
 ## Further Research
 Once the above problem has been solved for its search space, the search space will be expanded by eliminating each of the above simplifications, one by one.

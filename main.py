@@ -12,6 +12,9 @@ location_ids
     * loc 2
     * loc 3 ...
 """
+
+# TODO refactor everything to only ever use id's, of locations, drivers, etc
+# TODO Try to have the program be more dynamic. If a user enters an id greater than all the others, work with it.
 IN_TRANSIT = "IN_TRANSIT"
 TIME_STEPS = 100
 locations = ["IN_TRANSIT",
